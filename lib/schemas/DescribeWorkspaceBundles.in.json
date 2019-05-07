@@ -1,0 +1,66 @@
+{
+    "type": "object",
+    "properties": {
+        "NextToken": {
+            "required": false,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "BundleIds": {
+                    "description": "The identifiers of the bundles. You cannot combine this parameter with any other filter.",
+                    "items": {
+                        "pattern": "^wsb-[0-9a-z]{8,63}$",
+                        "type": "string"
+                    },
+                    "maxItems": 25,
+                    "minItems": 1,
+                    "type": "array"
+                },
+                "NextToken": {
+                    "description": "The token for the next set of results. (You received this token from a previous call.)",
+                    "maxLength": 63,
+                    "minLength": 1,
+                    "type": "string"
+                },
+                "Owner": {
+                    "description": "<p>The owner of the bundles. You cannot combine this parameter with any other filter.</p> <p>Specify <code>AMAZON</code> to describe the bundles provided by AWS or null to describe the bundles that belong to your account.</p>",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

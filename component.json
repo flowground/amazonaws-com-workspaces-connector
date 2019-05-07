@@ -1,0 +1,584 @@
+{
+    "title": "Amazon WorkSpaces",
+    "description": "<fullname>Amazon WorkSpaces Service</fullname> <p>Amazon WorkSpaces enables you to provision virtual, cloud-based Microsoft Windows and Amazon Linux desktops for your users.</p>",
+    "docsUrl": "https://docs.aws.amazon.com/workspaces/",
+    "url": "https://api.apis.guru/v2/specs/amazonaws.com/workspaces/2015-04-08/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://workspaces.amazonaws.com/",
+                    "http://workspaces.amazonaws.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "hmac": {
+                "label": "Authorization (hmac)",
+                "viewClass": "TextFieldView",
+                "note": "Amazon Signature authorization v4"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "AssociateIpGroups": {
+            "main": "./lib/actions/AssociateIpGroups.js",
+            "title": "Associates the specified IP access control group with the specified directory.",
+            "description": "Associates the specified IP access control group with the specified directory.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AssociateIpGroups.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "AuthorizeIpRules": {
+            "main": "./lib/actions/AuthorizeIpRules.js",
+            "title": "<p>Adds one or more rules to the specified IP access control group.</p> <p>This action gives users permission to access their WorkSpaces from the CIDR address ranges specified in the rules.</p>",
+            "description": "<p>Adds one or more rules to the specified IP access control group.</p> <p>This action gives users permission to access their WorkSpaces from the CIDR address ranges specified in the rules.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AuthorizeIpRules.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateIpGroup": {
+            "main": "./lib/actions/CreateIpGroup.js",
+            "title": "<p>Creates an IP access control group.</p> <p>An IP access control group provides you with the ability to control the IP addresses from which users are allowed to access their WorkSpaces. To specify the CIDR address ranges, add rules to your IP access control group and then associate the group with your directory. You can add rules when you create the group or at any time using <a>AuthorizeIpRules</a>.</p> <p>There is a default IP access control group associated with your directory. If you don't associate an IP access control group with your directory, the default group is used. The default group includes a default rule that allows users to access their WorkSpaces from anywhere. You cannot modify the default IP access control group for your directory.</p>",
+            "description": "<p>Creates an IP access control group.</p> <p>An IP access control group provides you with the ability to control the IP addresses from which users are allowed to access their WorkSpaces. To specify the CIDR address ranges, add rules to your IP access control group and then associate the group with your directory. You can add rules when you create the group or at any time using <a>AuthorizeIpRules</a>.</p> <p>There is a default IP access control group associated with your directory. If you don't associate an IP access control group with your directory, the default group is used. The default group includes a default rule that allows users to access their WorkSpaces from anywhere. You cannot modify the default IP access control group for your directory.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateIpGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateTags": {
+            "main": "./lib/actions/CreateTags.js",
+            "title": "Creates the specified tags for the specified WorkSpace.",
+            "description": "Creates the specified tags for the specified WorkSpace.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateTags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateWorkspaces": {
+            "main": "./lib/actions/CreateWorkspaces.js",
+            "title": "<p>Creates one or more WorkSpaces.</p> <p>This operation is asynchronous and returns before the WorkSpaces are created.</p>",
+            "description": "<p>Creates one or more WorkSpaces.</p> <p>This operation is asynchronous and returns before the WorkSpaces are created.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateWorkspaces.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteIpGroup": {
+            "main": "./lib/actions/DeleteIpGroup.js",
+            "title": "<p>Deletes the specified IP access control group.</p> <p>You cannot delete an IP access control group that is associated with a directory.</p>",
+            "description": "<p>Deletes the specified IP access control group.</p> <p>You cannot delete an IP access control group that is associated with a directory.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteIpGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteTags": {
+            "main": "./lib/actions/DeleteTags.js",
+            "title": "Deletes the specified tags from the specified WorkSpace.",
+            "description": "Deletes the specified tags from the specified WorkSpace.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteTags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteWorkspaceImage": {
+            "main": "./lib/actions/DeleteWorkspaceImage.js",
+            "title": "Deletes the specified image from your account. To delete an image, you must first delete any bundles that are associated with the image. ",
+            "description": "Deletes the specified image from your account. To delete an image, you must first delete any bundles that are associated with the image. ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteWorkspaceImage.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeAccount": {
+            "main": "./lib/actions/DescribeAccount.js",
+            "title": "Retrieves a list that describes the configuration of bring your own license (BYOL) for the specified account.",
+            "description": "Retrieves a list that describes the configuration of bring your own license (BYOL) for the specified account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeAccount.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeAccountModifications": {
+            "main": "./lib/actions/DescribeAccountModifications.js",
+            "title": "Retrieves a list that describes modifications to the configuration of bring your own license (BYOL) for the specified account.",
+            "description": "Retrieves a list that describes modifications to the configuration of bring your own license (BYOL) for the specified account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeAccountModifications.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeClientProperties": {
+            "main": "./lib/actions/DescribeClientProperties.js",
+            "title": "Retrieves a list that describes one or more specified Amazon WorkSpaces clients.",
+            "description": "Retrieves a list that describes one or more specified Amazon WorkSpaces clients.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeClientProperties.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeIpGroups": {
+            "main": "./lib/actions/DescribeIpGroups.js",
+            "title": "Describes one or more of your IP access control groups.",
+            "description": "Describes one or more of your IP access control groups.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeIpGroups.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeTags": {
+            "main": "./lib/actions/DescribeTags.js",
+            "title": "Describes the specified tags for the specified WorkSpace.",
+            "description": "Describes the specified tags for the specified WorkSpace.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeTags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeWorkspaceBundles": {
+            "main": "./lib/actions/DescribeWorkspaceBundles.js",
+            "title": "<p>Retrieves a list that describes the available WorkSpace bundles.</p> <p>You can filter the results using either bundle ID or owner, but not both.</p>",
+            "description": "<p>Retrieves a list that describes the available WorkSpace bundles.</p> <p>You can filter the results using either bundle ID or owner, but not both.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeWorkspaceBundles.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeWorkspaceDirectories": {
+            "main": "./lib/actions/DescribeWorkspaceDirectories.js",
+            "title": "Describes the available AWS Directory Service directories that are registered with Amazon WorkSpaces.",
+            "description": "Describes the available AWS Directory Service directories that are registered with Amazon WorkSpaces.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeWorkspaceDirectories.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeWorkspaceImages": {
+            "main": "./lib/actions/DescribeWorkspaceImages.js",
+            "title": "Retrieves a list that describes one or more specified images, if the image identifiers are provided. Otherwise, all images in the account are described. ",
+            "description": "Retrieves a list that describes one or more specified images, if the image identifiers are provided. Otherwise, all images in the account are described. ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeWorkspaceImages.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeWorkspaces": {
+            "main": "./lib/actions/DescribeWorkspaces.js",
+            "title": "<p>Describes the specified WorkSpaces.</p> <p>You can filter the results by using the bundle identifier, directory identifier, or owner, but you can specify only one filter at a time.</p>",
+            "description": "<p>Describes the specified WorkSpaces.</p> <p>You can filter the results by using the bundle identifier, directory identifier, or owner, but you can specify only one filter at a time.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeWorkspaces.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DescribeWorkspacesConnectionStatus": {
+            "main": "./lib/actions/DescribeWorkspacesConnectionStatus.js",
+            "title": "Describes the connection status of the specified WorkSpaces.",
+            "description": "Describes the connection status of the specified WorkSpaces.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DescribeWorkspacesConnectionStatus.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DisassociateIpGroups": {
+            "main": "./lib/actions/DisassociateIpGroups.js",
+            "title": "Disassociates the specified IP access control group from the specified directory.",
+            "description": "Disassociates the specified IP access control group from the specified directory.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DisassociateIpGroups.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ImportWorkspaceImage": {
+            "main": "./lib/actions/ImportWorkspaceImage.js",
+            "title": "Imports the specified Windows 7 or Windows 10 bring your own license (BYOL) image into Amazon WorkSpaces. The image must be an already licensed EC2 image that is in your AWS account, and you must own the image. ",
+            "description": "Imports the specified Windows 7 or Windows 10 bring your own license (BYOL) image into Amazon WorkSpaces. The image must be an already licensed EC2 image that is in your AWS account, and you must own the image. ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ImportWorkspaceImage.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListAvailableManagementCidrRanges": {
+            "main": "./lib/actions/ListAvailableManagementCidrRanges.js",
+            "title": "<p>Retrieves a list of IP address ranges, specified as IPv4 CIDR blocks, that you can use for the network management interface when you enable bring your own license (BYOL). </p> <p>The management network interface is connected to a secure Amazon WorkSpaces management network. It is used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces clients, and to allow Amazon WorkSpaces to manage the WorkSpace.</p>",
+            "description": "<p>Retrieves a list of IP address ranges, specified as IPv4 CIDR blocks, that you can use for the network management interface when you enable bring your own license (BYOL). </p> <p>The management network interface is connected to a secure Amazon WorkSpaces management network. It is used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces clients, and to allow Amazon WorkSpaces to manage the WorkSpace.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListAvailableManagementCidrRanges.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ModifyAccount": {
+            "main": "./lib/actions/ModifyAccount.js",
+            "title": "Modifies the configuration of bring your own license (BYOL) for the specified account.",
+            "description": "Modifies the configuration of bring your own license (BYOL) for the specified account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ModifyAccount.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ModifyClientProperties": {
+            "main": "./lib/actions/ModifyClientProperties.js",
+            "title": "Modifies the properties of the specified Amazon WorkSpaces client.",
+            "description": "Modifies the properties of the specified Amazon WorkSpaces client.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ModifyClientProperties.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ModifyWorkspaceProperties": {
+            "main": "./lib/actions/ModifyWorkspaceProperties.js",
+            "title": "Modifies the specified WorkSpace properties.",
+            "description": "Modifies the specified WorkSpace properties.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ModifyWorkspaceProperties.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ModifyWorkspaceState": {
+            "main": "./lib/actions/ModifyWorkspaceState.js",
+            "title": "<p>Sets the state of the specified WorkSpace.</p> <p>To maintain a WorkSpace without being interrupted, set the WorkSpace state to <code>ADMIN_MAINTENANCE</code>. WorkSpaces in this state do not respond to requests to reboot, stop, start, or rebuild. An AutoStop WorkSpace in this state is not stopped. Users can log into a WorkSpace in the <code>ADMIN_MAINTENANCE</code> state.</p>",
+            "description": "<p>Sets the state of the specified WorkSpace.</p> <p>To maintain a WorkSpace without being interrupted, set the WorkSpace state to <code>ADMIN_MAINTENANCE</code>. WorkSpaces in this state do not respond to requests to reboot, stop, start, or rebuild. An AutoStop WorkSpace in this state is not stopped. Users can log into a WorkSpace in the <code>ADMIN_MAINTENANCE</code> state.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ModifyWorkspaceState.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "RebootWorkspaces": {
+            "main": "./lib/actions/RebootWorkspaces.js",
+            "title": "<p>Reboots the specified WorkSpaces.</p> <p>You cannot reboot a WorkSpace unless its state is <code>AVAILABLE</code> or <code>UNHEALTHY</code>.</p> <p>This operation is asynchronous and returns before the WorkSpaces have rebooted.</p>",
+            "description": "<p>Reboots the specified WorkSpaces.</p> <p>You cannot reboot a WorkSpace unless its state is <code>AVAILABLE</code> or <code>UNHEALTHY</code>.</p> <p>This operation is asynchronous and returns before the WorkSpaces have rebooted.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/RebootWorkspaces.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "RebuildWorkspaces": {
+            "main": "./lib/actions/RebuildWorkspaces.js",
+            "title": "<p>Rebuilds the specified WorkSpace.</p> <p>You cannot rebuild a WorkSpace unless its state is <code>AVAILABLE</code>, <code>ERROR</code>, or <code>UNHEALTHY</code>.</p> <p>Rebuilding a WorkSpace is a potentially destructive action that can result in the loss of data. For more information, see <a href=\"http://docs.aws.amazon.com/workspaces/latest/adminguide/reset-workspace.html\">Rebuild a WorkSpace</a>.</p> <p>This operation is asynchronous and returns before the WorkSpaces have been completely rebuilt.</p>",
+            "description": "<p>Rebuilds the specified WorkSpace.</p> <p>You cannot rebuild a WorkSpace unless its state is <code>AVAILABLE</code>, <code>ERROR</code>, or <code>UNHEALTHY</code>.</p> <p>Rebuilding a WorkSpace is a potentially destructive action that can result in the loss of data. For more information, see <a href=\"http://docs.aws.amazon.com/workspaces/latest/adminguide/reset-workspace.html\">Rebuild a WorkSpace</a>.</p> <p>This operation is asynchronous and returns before the WorkSpaces have been completely rebuilt.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/RebuildWorkspaces.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "RevokeIpRules": {
+            "main": "./lib/actions/RevokeIpRules.js",
+            "title": "Removes one or more rules from the specified IP access control group.",
+            "description": "Removes one or more rules from the specified IP access control group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/RevokeIpRules.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "StartWorkspaces": {
+            "main": "./lib/actions/StartWorkspaces.js",
+            "title": "<p>Starts the specified WorkSpaces.</p> <p>You cannot start a WorkSpace unless it has a running mode of <code>AutoStop</code> and a state of <code>STOPPED</code>.</p>",
+            "description": "<p>Starts the specified WorkSpaces.</p> <p>You cannot start a WorkSpace unless it has a running mode of <code>AutoStop</code> and a state of <code>STOPPED</code>.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/StartWorkspaces.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "StopWorkspaces": {
+            "main": "./lib/actions/StopWorkspaces.js",
+            "title": "<p> Stops the specified WorkSpaces.</p> <p>You cannot stop a WorkSpace unless it has a running mode of <code>AutoStop</code> and a state of <code>AVAILABLE</code>, <code>IMPAIRED</code>, <code>UNHEALTHY</code>, or <code>ERROR</code>.</p>",
+            "description": "<p> Stops the specified WorkSpaces.</p> <p>You cannot stop a WorkSpace unless it has a running mode of <code>AutoStop</code> and a state of <code>AVAILABLE</code>, <code>IMPAIRED</code>, <code>UNHEALTHY</code>, or <code>ERROR</code>.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/StopWorkspaces.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "TerminateWorkspaces": {
+            "main": "./lib/actions/TerminateWorkspaces.js",
+            "title": "<p>Terminates the specified WorkSpaces.</p> <p>Terminating a WorkSpace is a permanent action and cannot be undone. The user's data is destroyed. If you need to archive any user data, contact Amazon Web Services before terminating the WorkSpace.</p> <p>You can terminate a WorkSpace that is in any state except <code>SUSPENDED</code>.</p> <p>This operation is asynchronous and returns before the WorkSpaces have been completely terminated.</p>",
+            "description": "<p>Terminates the specified WorkSpaces.</p> <p>Terminating a WorkSpace is a permanent action and cannot be undone. The user's data is destroyed. If you need to archive any user data, contact Amazon Web Services before terminating the WorkSpace.</p> <p>You can terminate a WorkSpace that is in any state except <code>SUSPENDED</code>.</p> <p>This operation is asynchronous and returns before the WorkSpaces have been completely terminated.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/TerminateWorkspaces.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateRulesOfIpGroup": {
+            "main": "./lib/actions/UpdateRulesOfIpGroup.js",
+            "title": "Replaces the current rules of the specified IP access control group with the specified rules.",
+            "description": "Replaces the current rules of the specified IP access control group with the specified rules.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateRulesOfIpGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,79 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "ResourceId": {
+                    "description": "The identifier of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.",
+                    "minLength": 1,
+                    "type": "string"
+                },
+                "Tags": {
+                    "description": "The tags. Each WorkSpace can have a maximum of 50 tags.",
+                    "items": {
+                        "description": "Describes a tag.",
+                        "properties": {
+                            "Key": {
+                                "description": "The key of the tag.",
+                                "maxLength": 127,
+                                "minLength": 1,
+                                "type": "string"
+                            },
+                            "Value": {
+                                "description": "The value of the tag.",
+                                "maxLength": 255,
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "ResourceId",
+                "Tags"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

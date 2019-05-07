@@ -1,0 +1,157 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "Workspaces": {
+                    "description": "The WorkSpaces to create. You can specify up to 25 WorkSpaces.",
+                    "items": {
+                        "description": "Describes the information used to create a WorkSpace.",
+                        "properties": {
+                            "BundleId": {
+                                "description": "The identifier of the bundle for the WorkSpace. You can use <a>DescribeWorkspaceBundles</a> to list the available bundles.",
+                                "pattern": "^wsb-[0-9a-z]{8,63}$",
+                                "type": "string"
+                            },
+                            "DirectoryId": {
+                                "description": "The identifier of the AWS Directory Service directory for the WorkSpace. You can use <a>DescribeWorkspaceDirectories</a> to list the available directories.",
+                                "pattern": "^d-[0-9a-f]{8,63}$",
+                                "type": "string"
+                            },
+                            "RootVolumeEncryptionEnabled": {
+                                "description": "Indicates whether the data stored on the root volume is encrypted.",
+                                "type": "boolean"
+                            },
+                            "Tags": {
+                                "description": "The tags for the WorkSpace.",
+                                "items": {
+                                    "description": "Describes a tag.",
+                                    "properties": {
+                                        "Key": {
+                                            "description": "The key of the tag.",
+                                            "maxLength": 127,
+                                            "minLength": 1,
+                                            "type": "string"
+                                        },
+                                        "Value": {
+                                            "description": "The value of the tag.",
+                                            "maxLength": 255,
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "Key"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "UserName": {
+                                "description": "The username of the user for the WorkSpace. This username must exist in the AWS Directory Service directory for the WorkSpace.",
+                                "maxLength": 63,
+                                "minLength": 1,
+                                "type": "string"
+                            },
+                            "UserVolumeEncryptionEnabled": {
+                                "description": "Indicates whether the data stored on the user volume is encrypted.",
+                                "type": "boolean"
+                            },
+                            "VolumeEncryptionKey": {
+                                "description": "The KMS key used to encrypt data stored on your WorkSpace.",
+                                "type": "string"
+                            },
+                            "WorkspaceProperties": {
+                                "description": "The WorkSpace properties.",
+                                "properties": {
+                                    "ComputeTypeName": {
+                                        "description": "The compute type. For more information, see <a href=\"http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles\">Amazon WorkSpaces Bundles</a>.",
+                                        "enum": [
+                                            "VALUE",
+                                            "STANDARD",
+                                            "PERFORMANCE",
+                                            "POWER",
+                                            "GRAPHICS",
+                                            "POWERPRO",
+                                            "GRAPHICSPRO"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "RootVolumeSizeGib": {
+                                        "description": "The size of the root volume.",
+                                        "type": "integer"
+                                    },
+                                    "RunningMode": {
+                                        "description": "The running mode. For more information, see <a href=\"http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html\">Manage the WorkSpace Running Mode</a>.",
+                                        "enum": [
+                                            "AUTO_STOP",
+                                            "ALWAYS_ON"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "RunningModeAutoStopTimeoutInMinutes": {
+                                        "description": "The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60 minute intervals.",
+                                        "type": "integer"
+                                    },
+                                    "UserVolumeSizeGib": {
+                                        "description": "The size of the user storage.",
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        },
+                        "required": [
+                            "DirectoryId",
+                            "UserName",
+                            "BundleId"
+                        ],
+                        "type": "object"
+                    },
+                    "maxItems": 25,
+                    "minItems": 1,
+                    "type": "array"
+                }
+            },
+            "required": [
+                "Workspaces"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}
