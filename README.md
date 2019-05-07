@@ -1,11 +1,11 @@
-# ![LOGO](logo.png) Amazon WorkSpaces MSP Connector
+# ![LOGO](logo.png) Amazon WorkSpaces **flow**ground Connector
 
 ## Description
 
-A generated MSP connector for the Amazon WorkSpaces API (version 2015-04-08).
+A generated **flow**ground connector for the Amazon WorkSpaces API (version 2015-04-08).
 
 Generated from: https://api.apis.guru/v2/specs/amazonaws.com/workspaces/2015-04-08/swagger.json<br/>
-Generated at: 2019-05-07T11:16:53+03:00
+Generated at: 2019-05-07T17:36:32+03:00
 
 ## API Description
 
@@ -435,7 +435,7 @@ Supported authorization schemes:
 
 ## License
 
-flowground :- Telekom iPaaS / amazonaws-com-workspaces-connector<br/>
+**flow**ground :- Telekom iPaaS / amazonaws-com-workspaces-connector<br/>
 Copyright © 2019, [Deutsche Telekom AG](https://www.telekom.de)<br/>
 contact: flowground@telekom.de
 
