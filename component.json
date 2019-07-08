@@ -1,6 +1,6 @@
 {
     "title": "Amazon WorkSpaces",
-    "description": "<fullname>Amazon WorkSpaces Service</fullname> <p>Amazon WorkSpaces enables you to provision virtual, cloud-based Microsoft Windows and Amazon Linux desktops for your users.</p>",
+    "description": "Amazon WorkSpaces Service Amazon WorkSpaces enables you to provision virtual,\ncloud-based Microsoft Windows and Amazon Linux desktops for your users.",
     "docsUrl": "https://docs.aws.amazon.com/workspaces/",
     "url": "https://api.apis.guru/v2/specs/amazonaws.com/workspaces/2015-04-08/swagger.json",
     "envVars": {},
@@ -20,7 +20,7 @@
                 "label": "Custom Server URL",
                 "viewClass": "TextFieldView"
             },
-            "hmac": {
+            "auth_hmac": {
                 "label": "Authorization (hmac)",
                 "viewClass": "TextFieldView",
                 "note": "Amazon Signature authorization v4"
@@ -38,7 +38,7 @@
     "actions": {
         "AssociateIpGroups": {
             "main": "./lib/actions/AssociateIpGroups.js",
-            "title": "Associates the specified IP access control group with the specified directory.",
+            "title": "AssociateIpGroups",
             "description": "Associates the specified IP access control group with the specified directory.",
             "fields": {
                 "verbose": {
@@ -55,8 +55,8 @@
         },
         "AuthorizeIpRules": {
             "main": "./lib/actions/AuthorizeIpRules.js",
-            "title": "<p>Adds one or more rules to the specified IP access control group.</p> <p>This action gives users permission to access their WorkSpaces from the CIDR address ranges specified in the rules.</p>",
-            "description": "<p>Adds one or more rules to the specified IP access control group.</p> <p>This action gives users permission to access their WorkSpaces from the CIDR address ranges specified in the rules.</p>",
+            "title": "AuthorizeIpRules",
+            "description": "Adds one or more rules to the specified IP access control group.\n\nThis action gives users permission to access their WorkSpaces from the CIDR\naddress ranges specified in the rules.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -72,8 +72,8 @@
         },
         "CreateIpGroup": {
             "main": "./lib/actions/CreateIpGroup.js",
-            "title": "<p>Creates an IP access control group.</p> <p>An IP access control group provides you with the ability to control the IP addresses from which users are allowed to access their WorkSpaces. To specify the CIDR address ranges, add rules to your IP access control group and then associate the group with your directory. You can add rules when you create the group or at any time using <a>AuthorizeIpRules</a>.</p> <p>There is a default IP access control group associated with your directory. If you don't associate an IP access control group with your directory, the default group is used. The default group includes a default rule that allows users to access their WorkSpaces from anywhere. You cannot modify the default IP access control group for your directory.</p>",
-            "description": "<p>Creates an IP access control group.</p> <p>An IP access control group provides you with the ability to control the IP addresses from which users are allowed to access their WorkSpaces. To specify the CIDR address ranges, add rules to your IP access control group and then associate the group with your directory. You can add rules when you create the group or at any time using <a>AuthorizeIpRules</a>.</p> <p>There is a default IP access control group associated with your directory. If you don't associate an IP access control group with your directory, the default group is used. The default group includes a default rule that allows users to access their WorkSpaces from anywhere. You cannot modify the default IP access control group for your directory.</p>",
+            "title": "CreateIpGroup",
+            "description": "Creates an IP access control group.\n\nAn IP access control group provides you with the ability to control the IP\naddresses from which users are allowed to access their WorkSpaces. To specify\nthe CIDR address ranges, add rules to your IP access control group and then\nassociate the group with your directory. You can add rules when you create the\ngroup or at any time using AuthorizeIpRules.\n\nThere is a default IP access control group associated with your directory. If\nyou don't associate an IP access control group with your directory, the default\ngroup is used. The default group includes a default rule that allows users to\naccess their WorkSpaces from anywhere. You cannot modify the default IP access\ncontrol group for your directory.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -89,7 +89,7 @@
         },
         "CreateTags": {
             "main": "./lib/actions/CreateTags.js",
-            "title": "Creates the specified tags for the specified WorkSpace.",
+            "title": "CreateTags",
             "description": "Creates the specified tags for the specified WorkSpace.",
             "fields": {
                 "verbose": {
@@ -106,8 +106,8 @@
         },
         "CreateWorkspaces": {
             "main": "./lib/actions/CreateWorkspaces.js",
-            "title": "<p>Creates one or more WorkSpaces.</p> <p>This operation is asynchronous and returns before the WorkSpaces are created.</p>",
-            "description": "<p>Creates one or more WorkSpaces.</p> <p>This operation is asynchronous and returns before the WorkSpaces are created.</p>",
+            "title": "CreateWorkspaces",
+            "description": "Creates one or more WorkSpaces.\n\nThis operation is asynchronous and returns before the WorkSpaces are created.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -123,8 +123,8 @@
         },
         "DeleteIpGroup": {
             "main": "./lib/actions/DeleteIpGroup.js",
-            "title": "<p>Deletes the specified IP access control group.</p> <p>You cannot delete an IP access control group that is associated with a directory.</p>",
-            "description": "<p>Deletes the specified IP access control group.</p> <p>You cannot delete an IP access control group that is associated with a directory.</p>",
+            "title": "DeleteIpGroup",
+            "description": "Deletes the specified IP access control group.\n\nYou cannot delete an IP access control group that is associated with a\ndirectory.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -140,7 +140,7 @@
         },
         "DeleteTags": {
             "main": "./lib/actions/DeleteTags.js",
-            "title": "Deletes the specified tags from the specified WorkSpace.",
+            "title": "DeleteTags",
             "description": "Deletes the specified tags from the specified WorkSpace.",
             "fields": {
                 "verbose": {
@@ -157,7 +157,7 @@
         },
         "DeleteWorkspaceImage": {
             "main": "./lib/actions/DeleteWorkspaceImage.js",
-            "title": "Deletes the specified image from your account. To delete an image, you must first delete any bundles that are associated with the image. ",
+            "title": "DeleteWorkspaceImage",
             "description": "Deletes the specified image from your account. To delete an image, you must first delete any bundles that are associated with the image. ",
             "fields": {
                 "verbose": {
@@ -174,7 +174,7 @@
         },
         "DescribeAccount": {
             "main": "./lib/actions/DescribeAccount.js",
-            "title": "Retrieves a list that describes the configuration of bring your own license (BYOL) for the specified account.",
+            "title": "DescribeAccount",
             "description": "Retrieves a list that describes the configuration of bring your own license (BYOL) for the specified account.",
             "fields": {
                 "verbose": {
@@ -191,7 +191,7 @@
         },
         "DescribeAccountModifications": {
             "main": "./lib/actions/DescribeAccountModifications.js",
-            "title": "Retrieves a list that describes modifications to the configuration of bring your own license (BYOL) for the specified account.",
+            "title": "DescribeAccountModifications",
             "description": "Retrieves a list that describes modifications to the configuration of bring your own license (BYOL) for the specified account.",
             "fields": {
                 "verbose": {
@@ -208,7 +208,7 @@
         },
         "DescribeClientProperties": {
             "main": "./lib/actions/DescribeClientProperties.js",
-            "title": "Retrieves a list that describes one or more specified Amazon WorkSpaces clients.",
+            "title": "DescribeClientProperties",
             "description": "Retrieves a list that describes one or more specified Amazon WorkSpaces clients.",
             "fields": {
                 "verbose": {
@@ -225,7 +225,7 @@
         },
         "DescribeIpGroups": {
             "main": "./lib/actions/DescribeIpGroups.js",
-            "title": "Describes one or more of your IP access control groups.",
+            "title": "DescribeIpGroups",
             "description": "Describes one or more of your IP access control groups.",
             "fields": {
                 "verbose": {
@@ -242,7 +242,7 @@
         },
         "DescribeTags": {
             "main": "./lib/actions/DescribeTags.js",
-            "title": "Describes the specified tags for the specified WorkSpace.",
+            "title": "DescribeTags",
             "description": "Describes the specified tags for the specified WorkSpace.",
             "fields": {
                 "verbose": {
@@ -259,8 +259,8 @@
         },
         "DescribeWorkspaceBundles": {
             "main": "./lib/actions/DescribeWorkspaceBundles.js",
-            "title": "<p>Retrieves a list that describes the available WorkSpace bundles.</p> <p>You can filter the results using either bundle ID or owner, but not both.</p>",
-            "description": "<p>Retrieves a list that describes the available WorkSpace bundles.</p> <p>You can filter the results using either bundle ID or owner, but not both.</p>",
+            "title": "DescribeWorkspaceBundles",
+            "description": "Retrieves a list that describes the available WorkSpace bundles.\n\nYou can filter the results using either bundle ID or owner, but not both.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -276,7 +276,7 @@
         },
         "DescribeWorkspaceDirectories": {
             "main": "./lib/actions/DescribeWorkspaceDirectories.js",
-            "title": "Describes the available AWS Directory Service directories that are registered with Amazon WorkSpaces.",
+            "title": "DescribeWorkspaceDirectories",
             "description": "Describes the available AWS Directory Service directories that are registered with Amazon WorkSpaces.",
             "fields": {
                 "verbose": {
@@ -293,7 +293,7 @@
         },
         "DescribeWorkspaceImages": {
             "main": "./lib/actions/DescribeWorkspaceImages.js",
-            "title": "Retrieves a list that describes one or more specified images, if the image identifiers are provided. Otherwise, all images in the account are described. ",
+            "title": "DescribeWorkspaceImages",
             "description": "Retrieves a list that describes one or more specified images, if the image identifiers are provided. Otherwise, all images in the account are described. ",
             "fields": {
                 "verbose": {
@@ -310,8 +310,8 @@
         },
         "DescribeWorkspaces": {
             "main": "./lib/actions/DescribeWorkspaces.js",
-            "title": "<p>Describes the specified WorkSpaces.</p> <p>You can filter the results by using the bundle identifier, directory identifier, or owner, but you can specify only one filter at a time.</p>",
-            "description": "<p>Describes the specified WorkSpaces.</p> <p>You can filter the results by using the bundle identifier, directory identifier, or owner, but you can specify only one filter at a time.</p>",
+            "title": "DescribeWorkspaces",
+            "description": "Describes the specified WorkSpaces.\n\nYou can filter the results by using the bundle identifier, directory identifier,\nor owner, but you can specify only one filter at a time.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -327,7 +327,7 @@
         },
         "DescribeWorkspacesConnectionStatus": {
             "main": "./lib/actions/DescribeWorkspacesConnectionStatus.js",
-            "title": "Describes the connection status of the specified WorkSpaces.",
+            "title": "DescribeWorkspacesConnectionStatus",
             "description": "Describes the connection status of the specified WorkSpaces.",
             "fields": {
                 "verbose": {
@@ -344,7 +344,7 @@
         },
         "DisassociateIpGroups": {
             "main": "./lib/actions/DisassociateIpGroups.js",
-            "title": "Disassociates the specified IP access control group from the specified directory.",
+            "title": "DisassociateIpGroups",
             "description": "Disassociates the specified IP access control group from the specified directory.",
             "fields": {
                 "verbose": {
@@ -361,7 +361,7 @@
         },
         "ImportWorkspaceImage": {
             "main": "./lib/actions/ImportWorkspaceImage.js",
-            "title": "Imports the specified Windows 7 or Windows 10 bring your own license (BYOL) image into Amazon WorkSpaces. The image must be an already licensed EC2 image that is in your AWS account, and you must own the image. ",
+            "title": "ImportWorkspaceImage",
             "description": "Imports the specified Windows 7 or Windows 10 bring your own license (BYOL) image into Amazon WorkSpaces. The image must be an already licensed EC2 image that is in your AWS account, and you must own the image. ",
             "fields": {
                 "verbose": {
@@ -378,8 +378,8 @@
         },
         "ListAvailableManagementCidrRanges": {
             "main": "./lib/actions/ListAvailableManagementCidrRanges.js",
-            "title": "<p>Retrieves a list of IP address ranges, specified as IPv4 CIDR blocks, that you can use for the network management interface when you enable bring your own license (BYOL). </p> <p>The management network interface is connected to a secure Amazon WorkSpaces management network. It is used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces clients, and to allow Amazon WorkSpaces to manage the WorkSpace.</p>",
-            "description": "<p>Retrieves a list of IP address ranges, specified as IPv4 CIDR blocks, that you can use for the network management interface when you enable bring your own license (BYOL). </p> <p>The management network interface is connected to a secure Amazon WorkSpaces management network. It is used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces clients, and to allow Amazon WorkSpaces to manage the WorkSpace.</p>",
+            "title": "ListAvailableManagementCidrRanges",
+            "description": "Retrieves a list of IP address ranges, specified as IPv4 CIDR blocks, that you\ncan use for the network management interface when you enable bring your own\nlicense (BYOL). \n\nThe management network interface is connected to a secure Amazon WorkSpaces\nmanagement network. It is used for interactive streaming of the WorkSpace\ndesktop to Amazon WorkSpaces clients, and to allow Amazon WorkSpaces to manage\nthe WorkSpace.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -395,7 +395,7 @@
         },
         "ModifyAccount": {
             "main": "./lib/actions/ModifyAccount.js",
-            "title": "Modifies the configuration of bring your own license (BYOL) for the specified account.",
+            "title": "ModifyAccount",
             "description": "Modifies the configuration of bring your own license (BYOL) for the specified account.",
             "fields": {
                 "verbose": {
@@ -412,7 +412,7 @@
         },
         "ModifyClientProperties": {
             "main": "./lib/actions/ModifyClientProperties.js",
-            "title": "Modifies the properties of the specified Amazon WorkSpaces client.",
+            "title": "ModifyClientProperties",
             "description": "Modifies the properties of the specified Amazon WorkSpaces client.",
             "fields": {
                 "verbose": {
@@ -429,7 +429,7 @@
         },
         "ModifyWorkspaceProperties": {
             "main": "./lib/actions/ModifyWorkspaceProperties.js",
-            "title": "Modifies the specified WorkSpace properties.",
+            "title": "ModifyWorkspaceProperties",
             "description": "Modifies the specified WorkSpace properties.",
             "fields": {
                 "verbose": {
@@ -446,8 +446,8 @@
         },
         "ModifyWorkspaceState": {
             "main": "./lib/actions/ModifyWorkspaceState.js",
-            "title": "<p>Sets the state of the specified WorkSpace.</p> <p>To maintain a WorkSpace without being interrupted, set the WorkSpace state to <code>ADMIN_MAINTENANCE</code>. WorkSpaces in this state do not respond to requests to reboot, stop, start, or rebuild. An AutoStop WorkSpace in this state is not stopped. Users can log into a WorkSpace in the <code>ADMIN_MAINTENANCE</code> state.</p>",
-            "description": "<p>Sets the state of the specified WorkSpace.</p> <p>To maintain a WorkSpace without being interrupted, set the WorkSpace state to <code>ADMIN_MAINTENANCE</code>. WorkSpaces in this state do not respond to requests to reboot, stop, start, or rebuild. An AutoStop WorkSpace in this state is not stopped. Users can log into a WorkSpace in the <code>ADMIN_MAINTENANCE</code> state.</p>",
+            "title": "ModifyWorkspaceState",
+            "description": "Sets the state of the specified WorkSpace.\n\nTo maintain a WorkSpace without being interrupted, set the WorkSpace state to \nADMIN_MAINTENANCE. WorkSpaces in this state do not respond to requests to\nreboot, stop, start, or rebuild. An AutoStop WorkSpace in this state is not\nstopped. Users can log into a WorkSpace in the ADMIN_MAINTENANCE state.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -463,8 +463,8 @@
         },
         "RebootWorkspaces": {
             "main": "./lib/actions/RebootWorkspaces.js",
-            "title": "<p>Reboots the specified WorkSpaces.</p> <p>You cannot reboot a WorkSpace unless its state is <code>AVAILABLE</code> or <code>UNHEALTHY</code>.</p> <p>This operation is asynchronous and returns before the WorkSpaces have rebooted.</p>",
-            "description": "<p>Reboots the specified WorkSpaces.</p> <p>You cannot reboot a WorkSpace unless its state is <code>AVAILABLE</code> or <code>UNHEALTHY</code>.</p> <p>This operation is asynchronous and returns before the WorkSpaces have rebooted.</p>",
+            "title": "RebootWorkspaces",
+            "description": "Reboots the specified WorkSpaces.\n\nYou cannot reboot a WorkSpace unless its state is AVAILABLE or UNHEALTHY.\n\nThis operation is asynchronous and returns before the WorkSpaces have rebooted.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -480,8 +480,8 @@
         },
         "RebuildWorkspaces": {
             "main": "./lib/actions/RebuildWorkspaces.js",
-            "title": "<p>Rebuilds the specified WorkSpace.</p> <p>You cannot rebuild a WorkSpace unless its state is <code>AVAILABLE</code>, <code>ERROR</code>, or <code>UNHEALTHY</code>.</p> <p>Rebuilding a WorkSpace is a potentially destructive action that can result in the loss of data. For more information, see <a href=\"http://docs.aws.amazon.com/workspaces/latest/adminguide/reset-workspace.html\">Rebuild a WorkSpace</a>.</p> <p>This operation is asynchronous and returns before the WorkSpaces have been completely rebuilt.</p>",
-            "description": "<p>Rebuilds the specified WorkSpace.</p> <p>You cannot rebuild a WorkSpace unless its state is <code>AVAILABLE</code>, <code>ERROR</code>, or <code>UNHEALTHY</code>.</p> <p>Rebuilding a WorkSpace is a potentially destructive action that can result in the loss of data. For more information, see <a href=\"http://docs.aws.amazon.com/workspaces/latest/adminguide/reset-workspace.html\">Rebuild a WorkSpace</a>.</p> <p>This operation is asynchronous and returns before the WorkSpaces have been completely rebuilt.</p>",
+            "title": "RebuildWorkspaces",
+            "description": "Rebuilds the specified WorkSpace.\n\nYou cannot rebuild a WorkSpace unless its state is AVAILABLE, ERROR, or \nUNHEALTHY.\n\nRebuilding a WorkSpace is a potentially destructive action that can result in\nthe loss of data. For more information, see Rebuild a WorkSpace\n[http://docs.aws.amazon.com/workspaces/latest/adminguide/reset-workspace.html].\n\nThis operation is asynchronous and returns before the WorkSpaces have been\ncompletely rebuilt.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -497,7 +497,7 @@
         },
         "RevokeIpRules": {
             "main": "./lib/actions/RevokeIpRules.js",
-            "title": "Removes one or more rules from the specified IP access control group.",
+            "title": "RevokeIpRules",
             "description": "Removes one or more rules from the specified IP access control group.",
             "fields": {
                 "verbose": {
@@ -514,8 +514,8 @@
         },
         "StartWorkspaces": {
             "main": "./lib/actions/StartWorkspaces.js",
-            "title": "<p>Starts the specified WorkSpaces.</p> <p>You cannot start a WorkSpace unless it has a running mode of <code>AutoStop</code> and a state of <code>STOPPED</code>.</p>",
-            "description": "<p>Starts the specified WorkSpaces.</p> <p>You cannot start a WorkSpace unless it has a running mode of <code>AutoStop</code> and a state of <code>STOPPED</code>.</p>",
+            "title": "StartWorkspaces",
+            "description": "Starts the specified WorkSpaces.\n\nYou cannot start a WorkSpace unless it has a running mode of AutoStop and a\nstate of STOPPED.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -531,8 +531,8 @@
         },
         "StopWorkspaces": {
             "main": "./lib/actions/StopWorkspaces.js",
-            "title": "<p> Stops the specified WorkSpaces.</p> <p>You cannot stop a WorkSpace unless it has a running mode of <code>AutoStop</code> and a state of <code>AVAILABLE</code>, <code>IMPAIRED</code>, <code>UNHEALTHY</code>, or <code>ERROR</code>.</p>",
-            "description": "<p> Stops the specified WorkSpaces.</p> <p>You cannot stop a WorkSpace unless it has a running mode of <code>AutoStop</code> and a state of <code>AVAILABLE</code>, <code>IMPAIRED</code>, <code>UNHEALTHY</code>, or <code>ERROR</code>.</p>",
+            "title": "StopWorkspaces",
+            "description": " Stops the specified WorkSpaces.\n\nYou cannot stop a WorkSpace unless it has a running mode of AutoStop and a state\nof AVAILABLE, IMPAIRED, UNHEALTHY, or ERROR.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -548,8 +548,8 @@
         },
         "TerminateWorkspaces": {
             "main": "./lib/actions/TerminateWorkspaces.js",
-            "title": "<p>Terminates the specified WorkSpaces.</p> <p>Terminating a WorkSpace is a permanent action and cannot be undone. The user's data is destroyed. If you need to archive any user data, contact Amazon Web Services before terminating the WorkSpace.</p> <p>You can terminate a WorkSpace that is in any state except <code>SUSPENDED</code>.</p> <p>This operation is asynchronous and returns before the WorkSpaces have been completely terminated.</p>",
-            "description": "<p>Terminates the specified WorkSpaces.</p> <p>Terminating a WorkSpace is a permanent action and cannot be undone. The user's data is destroyed. If you need to archive any user data, contact Amazon Web Services before terminating the WorkSpace.</p> <p>You can terminate a WorkSpace that is in any state except <code>SUSPENDED</code>.</p> <p>This operation is asynchronous and returns before the WorkSpaces have been completely terminated.</p>",
+            "title": "TerminateWorkspaces",
+            "description": "Terminates the specified WorkSpaces.\n\nTerminating a WorkSpace is a permanent action and cannot be undone. The user's\ndata is destroyed. If you need to archive any user data, contact Amazon Web\nServices before terminating the WorkSpace.\n\nYou can terminate a WorkSpace that is in any state except SUSPENDED.\n\nThis operation is asynchronous and returns before the WorkSpaces have been\ncompletely terminated.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -565,7 +565,7 @@
         },
         "UpdateRulesOfIpGroup": {
             "main": "./lib/actions/UpdateRulesOfIpGroup.js",
-            "title": "Replaces the current rules of the specified IP access control group with the specified rules.",
+            "title": "UpdateRulesOfIpGroup",
             "description": "Replaces the current rules of the specified IP access control group with the specified rules.",
             "fields": {
                 "verbose": {
